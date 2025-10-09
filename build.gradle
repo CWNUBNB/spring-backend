@@ -25,13 +25,25 @@ repositories {
 }
 
 dependencies {
+    // Spring Boot 관련 의존성
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Lombok 관련 의존성
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // PostgreSQL 관련 의존성
+    runtimeOnly 'org.postgresql:postgresql'
+
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+   // Swagger(OpenAPI 3.0) 관련 의존성
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+
 }
 
 tasks.named('test') {
