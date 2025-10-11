@@ -38,3 +38,10 @@ $ docker-compose build backend
 $ docker-compose up -d backend
 
 ```
+
+### Postgresql 데이터베이스 도커 설정하기
+
+```
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+
+```
