@@ -182,7 +182,7 @@ feature/festival-api
 ```yaml
 pull_request_templates:
   - name: Dev Template
-    path: .github/PULL_REQUEST_TEMPLATE/dev_pr.md
+    path: .github/PULL_REQUEST_TEMPLATE/pull_request_template.md
     branches:
       - dev
 
