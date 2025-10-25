@@ -14,13 +14,7 @@ import org.springframework.stereotype.Component;
 public class CustomLoginFailureHandler implements AuthenticationFailureHandler {
 
     /**
-     * 로그인 실패 핸들러
-     * @param request the request during which the authentication attempt occurred.
-     * @param response the response.
-     * @param exception the exception which was thrown to reject the authentication
-     * request.
-     * @throws IOException
-     * @throws ServletException
+     * 로그인 실패 시에 호출되는 메서드로 결과로는 401 Unauthorized 상태 코드와 함께 에러 메시지를 JSON 형식으로 응답 본문에 포함합니다.
      */
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
@@ -32,7 +26,7 @@ public class CustomLoginFailureHandler implements AuthenticationFailureHandler {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        response.getWriter().write("{비밀번호 또는 아이디가 일치하지 않습니다.}");
+        response.getWriter().write("{\\\"error\\\":\\\"비밀번호 또는 아이디가 일치하지 않습니다.\\\"}");
 
     }
 }

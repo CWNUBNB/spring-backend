@@ -5,8 +5,6 @@ import com.cwnu.global.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
-;
-
 
 @Entity
 @Table(name = "users")
@@ -56,7 +54,7 @@ public class User extends BaseEntity {
     }
 
     // Password 암호화
-    public void encodePassword(PasswordEncoder encoder){
+    public void encodePassword(PasswordEncoder encoder) {
         this.password = encoder.encode(password);
     }
 

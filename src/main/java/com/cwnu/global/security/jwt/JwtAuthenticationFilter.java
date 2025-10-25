@@ -26,10 +26,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         FilterChain filterChain) throws ServletException, IOException {
 
         String header = request.getHeader(HttpHeaders.AUTHORIZATION);
+
+        // 헤더에 토큰이 없거나 Bearer로 시작하지 않으면 다음 필터로 이동
         if (header == null || !header.startsWith("Bearer ")) {
-            throw new JwtException("JWT 토큰이 존재하지 않음");
+            filterChain.doFilter(request, response);
+            return;
         }
 
+        // 인증인 필요한 요청만 토큰 검증을 진행합니다.
         try {
             String token = header.substring(7);
             String loginId = jwtService.validateToken(token);

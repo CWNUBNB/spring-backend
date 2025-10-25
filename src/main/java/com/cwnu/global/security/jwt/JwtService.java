@@ -20,7 +20,7 @@ public class JwtService {
         return io.jsonwebtoken.security.Keys.hmacShaKeyFor(secretKey.getBytes());
     }
 
-    private final long accessTokenValidity =  1000 * 60 * 60; // 1시간'
+    private final long accessTokenValidity =  1000 * 60 * 60; // 1시간
 
     public String generateAccessToken(String loginId, String role){
         return Jwts.builder()
