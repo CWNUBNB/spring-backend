@@ -71,18 +71,18 @@ public class AccommodationCreateRequest {
     // ✅ Entity 변환 메서드
     public Accommodation toEntity() {
         return Accommodation.builder()
-                .title(title)
-                .description(description)
-                .accommodationType(accommodationType)
-                .maxGuests(maxGuests)
-                .beds(beds)
-                .bathrooms(bathrooms)
-                .pricePerNight(pricePerNight)
-                .cleaningFee(cleaningFee)
-                .status(status)
-                .checkInTime(checkInTime)
-                .checkOutTime(checkOutTime)
-                .build();
+            .title(title)
+            .description(description)
+            .accommodationType(accommodationType)
+            .maxGuests(maxGuests)
+            .beds(beds)
+            .bathrooms(bathrooms)
+            .pricePerNight(pricePerNight)
+            .cleaningFee(cleaningFee)
+            .status(status)
+            .checkInTime(checkInTime)
+            .checkOutTime(checkOutTime)
+            .build();
     }
 
 }
