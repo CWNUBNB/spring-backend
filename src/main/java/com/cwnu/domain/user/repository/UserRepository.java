@@ -1,6 +1,7 @@
 package com.cwnu.domain.user.repository;
 
 import com.cwnu.domain.user.entity.User;
+import jakarta.validation.constraints.Email;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +15,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // 로그인 ID로 유저 조회
     Optional<User> findByLoginId(String loginId);
+
+    boolean existsByEmail(String email);
 }
