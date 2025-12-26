@@ -18,17 +18,17 @@ public record ResponseDto<T>(@JsonIgnore HttpStatus httpStatus,
 
     public static <T> ResponseEntity<ResponseDto<T>> ok(@Nullable final T data) {
         return ResponseEntity.status(HttpStatus.OK)
-                .body(new ResponseDto<>(HttpStatus.OK, true, data, null));
+            .body(new ResponseDto<>(HttpStatus.OK, true, data, null));
     }
 
     public static <T> ResponseEntity<ResponseDto<T>> created() {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new ResponseDto<>(HttpStatus.CREATED, true, null, null));
+            .body(new ResponseDto<>(HttpStatus.CREATED, true, null, null));
     }
 
     public static <T> ResponseEntity<ResponseDto<T>> noContent() {
         return ResponseEntity.status(HttpStatus.NO_CONTENT)
-                .body(new ResponseDto<>(HttpStatus.NO_CONTENT, true, null, null));
+            .body(new ResponseDto<>(HttpStatus.NO_CONTENT, true, null, null));
     }
 
 //    public static <T> ResponseDto<T> fail(HttpStatus status, String message) {

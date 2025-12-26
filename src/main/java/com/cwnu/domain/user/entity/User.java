@@ -4,9 +4,7 @@ import com.cwnu.domain.user.dto.UserUpdateRequestDto;
 import com.cwnu.global.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-;
-
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
 @Table(name = "users")
@@ -47,10 +45,17 @@ public class User extends BaseEntity {
     private UserRoleType userRoleType;
 
     //** 비즈니스 메서드 **//
-    public void updateUser(UserUpdateRequestDto dto){
+
+    // 유저 정보 수정
+    public void updateUser(UserUpdateRequestDto dto) {
         this.nickname = dto.getNickname();
         this.email = dto.getEmail();
         this.phoneNumber = dto.getPhoneNumber();
+    }
+
+    // Password 암호화
+    public void encodePassword(PasswordEncoder encoder) {
+        this.password = encoder.encode(password);
     }
 
 }

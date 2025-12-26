@@ -62,25 +62,29 @@ public class AccommodationResponse {
     // ✅ Entity → DTO 변환 메서드
     public static AccommodationResponse fromEntity(Accommodation accommodation) {
         return AccommodationResponse.builder()
-                .id(accommodation.getId())
-                .title(accommodation.getTitle())
-                .description(accommodation.getDescription())
-                .accommodationType(accommodation.getAccommodationType())
-                .maxGuests(accommodation.getMaxGuests())
-                .beds(accommodation.getBeds())
-                .bathrooms(accommodation.getBathrooms())
-                .pricePerNight(accommodation.getPricePerNight())
-                .cleaningFee(accommodation.getCleaningFee())
-                .status(accommodation.getStatus())
-                .checkInTime(accommodation.getCheckInTime())
-                .checkOutTime(accommodation.getCheckOutTime())
-                .createdAt(accommodation.getCreatedAt())
-                .updatedAt(accommodation.getUpdatedAt())
-                .build();
+            .id(accommodation.getId())
+            .title(accommodation.getTitle())
+            .description(accommodation.getDescription())
+            .accommodationType(accommodation.getAccommodationType())
+            .maxGuests(accommodation.getMaxGuests())
+            .beds(accommodation.getBeds())
+            .bathrooms(accommodation.getBathrooms())
+            .pricePerNight(accommodation.getPricePerNight())
+            .cleaningFee(accommodation.getCleaningFee())
+            .status(accommodation.getStatus())
+            .checkInTime(accommodation.getCheckInTime())
+            .checkOutTime(accommodation.getCheckOutTime())
+            .createdAt(accommodation.getCreatedAt())
+            .updatedAt(accommodation.getUpdatedAt())
+            .build();
     }
 
     @QueryProjection
-    public AccommodationResponse(Long id, String title, String description, AccommodationType accommodationType, Integer maxGuests, Integer beds, Integer bathrooms, BigDecimal pricePerNight, BigDecimal cleaningFee, AccommodationStatus status, LocalTime checkInTime, LocalTime checkOutTime, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public AccommodationResponse(Long id, String title, String description,
+        AccommodationType accommodationType, Integer maxGuests, Integer beds, Integer bathrooms,
+        BigDecimal pricePerNight, BigDecimal cleaningFee, AccommodationStatus status,
+        LocalTime checkInTime, LocalTime checkOutTime, LocalDateTime createdAt,
+        LocalDateTime updatedAt) {
         this.id = id;
         this.title = title;
         this.description = description;
